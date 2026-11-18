@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Kebijakan Privasi Axten Finance — aplikasi pencatat keuangan yang menyimpan data di perangkatmu, tanpa akun dan tanpa server." />
+<link rel="icon" href="data:," />
+<title>Axten — Kebijakan Privasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#FBFAF6;
+    --surface:#FFFFFF;
+    --surface-2:#F4F0E6;
+    --ink:#171410;
+    --muted:#6B6455;
+    --line:#E6DFCE;
+    --gold:#B8911F;
+    --gold-bright:#D4AF37;
+    --gold-soft:#FFF6D8;
+    --black:#0E0D0A;
+    --radius:16px;
+    --shadow:0 10px 30px rgba(23,20,16,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0B0A08;
+      --surface:#171511;
+      --surface-2:#1E1B16;
+      --ink:#F4EFE3;
+      --muted:#A99F8A;
+      --line:#2E2A20;
+      --gold:#D4AF37;
+      --gold-bright:#E8C84A;
+      --gold-soft:#2A2412;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Plus Jakarta Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--gold); text-underline-offset:3px}
+  a:hover{color:var(--gold-bright)}
+  button,[role="button"]{min-height:44px}
+
+  /* ---------- Header ---------- */
+  .topbar{
+    background:var(--black);
+    color:#F4EFE3;
+    border-bottom:3px solid var(--gold-bright);
+  }
+  .topbar-inner{
+    max-width:880px;margin:0 auto;padding:28px 20px 30px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .mark{
+    width:44px;height:44px;flex:0 0 44px;border-radius:12px;
+    background:var(--gold-bright);color:#171410;
+    display:grid;place-items:center;
+    font-family:"Fraunces",serif;font-weight:900;font-size:24px;line-height:1;
+  }
+  .brand-name{font-weight:800;font-size:20px;letter-spacing:.02em;line-height:1.1}
+  .brand-tag{font-size:13px;color:#CFC6AE;line-height:1.3}
+  .brand-links{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  .brand-links a{
+    color:#F4EFE3;text-decoration:none;font-size:13px;font-weight:600;
+    border:1px solid #3A362B;border-radius:999px;padding:9px 14px;min-height:36px;
+    display:inline-flex;align-items:center;
+  }
+  .brand-links a:hover{border-color:var(--gold-bright);color:var(--gold-bright)}
+  .hero{margin-top:26px}
+  .hero h1{
+    font-family:"Fraunces",serif;font-weight:900;
+    font-size:clamp(36px,7vw,56px);line-height:1.02;letter-spacing:-.01em;margin:0;
+  }
+  .hero h1 em{font-style:normal;color:var(--gold-bright)}
+  .hero p{color:#D8D0BC;max-width:620px;margin:14px 0 0;font-size:16px}
+  .meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .pill{
+    font-size:12.5px;font-weight:700;letter-spacing:.02em;
+    border:1px solid #3A362B;border-radius:999px;padding:7px 12px;color:#EDE6D3;
+    display:inline-flex;align-items:center;gap:7px;min-height:32px;
+  }
+  .pill b{color:var(--gold-bright)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--gold-bright);flex:0 0 7px}
+
+  /* ---------- Layout ---------- */
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 64px}
+  .langbar{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter:blur(10px);
+    padding:14px 0 10px;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .langbar-label{font-size:13px;font-weight:700;color:var(--muted)}
+  .seg{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:4px;gap:4px}
+  .seg button{
+    border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;font-size:14px;
+    border-radius:999px;padding:8px 18px;cursor:pointer;min-height:40px;
+  }
+  .seg button[aria-pressed="true"]{background:var(--black);color:#F4EFE3}
+  @media (prefers-color-scheme: dark){ .seg button[aria-pressed="true"]{background:var(--gold-bright);color:#171410} }
+  .print-note{margin-left:auto;font-size:13px;color:var(--muted)}
+
+  /* Principles */
+  .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 8px}
+  .principle{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;box-shadow:var(--shadow);
+  }
+  .principle .num{
+    width:34px;height:34px;border-radius:10px;background:var(--gold-soft);color:var(--gold);
+    display:grid;place-items:center;font-weight:800;font-size:15px;margin-bottom:12px;
+    border:1px solid var(--line);
+  }
+  .principle h3{margin:0 0 6px;font-size:16px;line-height:1.3}
+  .principle p{margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+
+  .callout{
+    margin:18px 0;border-radius:var(--radius);padding:18px 20px;
+    background:var(--gold-soft);border:1px solid var(--gold);
+  }
+  .callout strong{display:block;margin-bottom:4px}
+  .callout p{margin:0;font-size:14.5px}
+
+  /* TOC */
+  .toc{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 20px;margin:22px 0 8px;
+  }
+  .toc h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+  .toc li{margin:0 0 8px;break-inside:avoid;font-size:14.5px}
+  .toc a{color:var(--ink);text-decoration:none;font-weight:600}
+  .toc a:hover{color:var(--gold);text-decoration:underline}
+
+  /* Sections */
+  section.policy{padding:26px 0 6px;border-bottom:1px solid var(--line)}
+  section.policy:last-of-type{border-bottom:0}
+  .sec-head{display:flex;gap:14px;align-items:flex-start}
+  .sec-no{
+    flex:0 0 auto;width:38px;height:38px;border-radius:50%;
+    background:var(--black);color:var(--gold-bright);
+    display:grid;place-items:center;font-weight:800;font-size:15px;margin-top:2px;
+  }
+  @media (prefers-color-scheme: dark){ .sec-no{background:var(--gold-bright);color:#171410} }
+  section.policy h2{margin:0;font-size:22px;line-height:1.25;letter-spacing:-.01em}
+  section.policy .body{margin-left:52px}
+  section.policy p{margin:10px 0;color:var(--ink)}
+  section.policy p.muted, section.policy li{color:var(--muted)}
+  section.policy ul{margin:8px 0 12px;padding-left:20px}
+  section.policy li{margin:6px 0}
+  section.policy li strong, section.policy p strong{color:var(--ink)}
+
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:14px 0;background:var(--surface)}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+  th,td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+  th{background:var(--surface-2);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  tr:last-child td{border-bottom:0}
+  td strong{color:var(--ink)}
+  .yes{font-weight:800;color:#1A7F37}
+  .no{font-weight:800;color:var(--gold)}
+  @media (prefers-color-scheme: dark){ .yes{color:#4ADE80} }
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  .contact-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;
+  }
+  .contact-card span{display:block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .contact-card a{font-weight:800;font-size:16px;text-decoration:none;word-break:break-all}
+  .contact-card p{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+
+  footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+  footer .foot-brand{font-weight:800;color:var(--ink);font-size:15px}
+  .hidden{display:none !important}
+
+  @media (max-width:640px){
+    .principles{grid-template-columns:1fr}
+    .toc ol{columns:1}
+    section.policy .body{margin-left:0;margin-top:6px}
+    .contact-grid{grid-template-columns:1fr}
+    .brand-links{margin-left:0}
+    .print-note{display:none}
+    .topbar-inner{padding:22px 16px 24px}
+    .wrap{padding:0 16px 48px}
+    /* Tables become stacked rows — no sideways scrolling on phones */
+    .table-wrap{overflow-x:visible}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody,tr,td{display:block;width:100%}
+    tr{padding:10px 0;border-bottom:1px solid var(--line)}
+    tr:last-child{border-bottom:0}
+    td{border-bottom:0;padding:3px 14px}
+    td:first-child{padding-top:4px;font-size:15px}
+    td:last-child{padding-bottom:4px}
+  }
+  @media print{
+    .langbar,.brand-links{display:none !important}
+    body{background:#fff;color:#000}
+    .topbar{background:#fff;color:#000;border-bottom:2px solid #000}
+    .hero p,.brand-tag{color:#333}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="mark" aria-hidden="true">A</div>
+      <div>
+        <div class="brand-name">AXTEN</div>
+        <div class="brand-tag" id="brand-tag">Axten Finance — Kembangkan kekayaanmu</div>
+      </div>
+      <nav class="brand-links" aria-label="Axten">
+        <a href="https://axten-xenon231techs-projects.vercel.app/" target="_blank" rel="noopener" id="link-app">Buka Aplikasi</a>
+        <a href="https://t.me/Axten_Bot" target="_blank" rel="noopener" id="link-bot">Bot Telegram</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <h1 id="hero-title">Kebijakan <em>Privasi</em></h1>
+      <p id="hero-desc">Bagaimana Axten memperlakukan data keuanganmu — singkatnya: data itu disimpan di perangkatmu, bukan di server kami.</p>
+      <div class="meta-row">
+        <span class="pill"><span class="dot"></span> <span id="pill-effective">Berlaku sejak</span> <b>&nbsp;18 November 2026</b></span>
+        <span class="pill"><span id="pill-version">Versi</span> <b>&nbsp;1.0</b></span>
+        <span class="pill" id="pill-scope">Untuk aplikasi web &amp; Telegram Mini App</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="langbar" role="group" aria-label="Bahasa / Language">
+    <span class="langbar-label" id="lang-label">Bahasa</span>
+    <div class="seg">
+      <button type="button" id="btn-id" aria-pressed="true" onclick="setLang('id')">Bahasa Indonesia</button>
+      <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">English</button>
+    </div>
+    <span class="print-note" id="print-note">Halaman ini bisa dicetak / disimpan sebagai PDF dari browser.</span>
+  </div>
+
+  <!-- ============ INDONESIAN ============ -->
+  <div id="content-id" lang="id">
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">1</div>
+        <h3>Data tinggal di perangkatmu</h3>
+        <p>Transaksi, dompet, aset, dan anggaran disimpan di penyimpanan lokal browser (localStorage) di HP atau komputermu sendiri.</p>
+      </div>
+      <div class="principle">
+        <div class="num">2</div>
+        <h3>Tanpa akun, tanpa server</h3>
+        <p>Axten tidak meminta pendaftaran dan tidak punya server yang menerima atau menyimpan data keuanganmu.</p>
+      </div>
+      <div class="principle">
+        <div class="num">3</div>
+        <h3>Kamu yang pegang kendali</h3>
+        <p>Kamu bisa mengekspor semua datamu kapan saja, dan menghapusnya secara permanen langsung dari perangkatmu.</p>
+      </div>
+    </div>
+
+    <div class="callout" role="note">
+      <strong>⚠ Penting soal PIN &amp; backup</strong>
+      <p>Karena data hanya ada di perangkatmu, <strong>lupa PIN berarti data tidak bisa dipulihkan</strong> dan harus dihapus. Ekspor backup (JSON / Excel / CSV) secara berkala dari menu Laporan agar datamu aman jika HP hilang, browser dibersihkan, atau PIN terlupa.</p>
+    </div>
+
+    <nav class="toc" aria-label="Daftar isi">
+      <h2>Daftar Isi</h2>
+      <ol>
+        <li><a href="#id-1">Tentang kebijakan ini</a></li>
+        <li><a href="#id-2">Data yang disimpan di perangkatmu</a></li>
+        <li><a href="#id-3">Data yang tidak kami kumpulkan</a></li>
+        <li><a href="#id-4">Layanan pihak ketiga</a></li>
+        <li><a href="#id-5">Foto struk &amp; lampiran</a></li>
+        <li><a href="#id-6">PIN &amp; keamanan</a></li>
+        <li><a href="#id-7">Ekspor, backup &amp; penghapusan</a></li>
+        <li><a href="#id-8">Anak-anak</a></li>
+        <li><a href="#id-9">Perubahan kebijakan</a></li>
+        <li><a href="#id-10">Hubungi kami</a></li>
+      </ol>
+    </nav>
+
+    <section class="policy" id="id-1">
+      <div class="sec-head"><div class="sec-no">1</div><h2>Tentang kebijakan ini</h2></div>
+      <div class="body">
+        <p>Kebijakan Privasi ini berlaku untuk <strong>Axten Finance (“Axten”)</strong> — aplikasi pencatat keuangan pribadi yang dapat diakses melalui aplikasi web dan Telegram Mini App (@Axten_Bot).</p>
+        <p>Axten dirancang dengan prinsip <strong>local-first</strong>: aplikasi bekerja sepenuhnya di perangkatmu. Dengan menggunakan Axten, kamu menyetujui praktik yang dijelaskan di halaman ini.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-2">
+      <div class="sec-head"><div class="sec-no">2</div><h2>Data yang disimpan di perangkatmu</h2></div>
+      <div class="body">
+        <p>Data berikut dibuat olehmu di dalam aplikasi dan disimpan <strong>hanya</strong> di penyimpanan lokal perangkatmu:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Jenis data</th><th>Contoh</th><th>Dikirim ke server Axten?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Transaksi</strong></td><td>Pemasukan, pengeluaran, nominal, kategori, catatan, tanggal</td><td><span class="no">Tidak</span></td></tr>
+              <tr><td><strong>Dompet &amp; aset</strong></td><td>Nama dompet, saldo, daftar aset, total kekayaan bersih</td><td><span class="no">Tidak</span></td></tr>
+              <tr><td><strong>Anggaran &amp; tagihan</strong></td><td>Budget per kategori, tagihan rutin dan jatuh temponya</td><td><span class="no">Tidak</span></td></tr>
+              <tr><td><strong>Portofolio crypto</strong></td><td>Koin yang kamu catat dan jumlah kepemilikannya</td><td><span class="no">Tidak</span></td></tr>
+              <tr><td><strong>Foto struk</strong></td><td>Foto bukti transaksi yang kamu lampirkan</td><td><span class="no">Tidak</span></td></tr>
+              <tr><td><strong>Pengaturan</strong></td><td>Bahasa, mata uang, tema, status tur pengenalan, mode demo</td><td><span class="no">Tidak</span></td></tr>
+              <tr><td><strong>PIN aplikasi</strong></td><td>PIN yang kamu buat untuk mengunci aplikasi (disimpan dalam bentuk terproteksi di perangkat)</td><td><span class="no">Tidak</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">Karena tidak ada sinkronisasi antarperangkat, data di HP dan di komputer akan berbeda — masing-masing mengikuti apa yang kamu catat di perangkat tersebut.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-3">
+      <div class="sec-head"><div class="sec-no">3</div><h2>Data yang tidak kami kumpulkan</h2></div>
+      <div class="body">
+        <ul>
+          <li><strong>Tidak ada akun:</strong> kami tidak mengumpulkan nama, email, nomor HP, atau kata sandi untuk pendaftaran Axten.</li>
+          <li><strong>Tidak ada pelacakan keuangan:</strong> isi transaksi dan saldomu tidak pernah dikirim, dianalisis, atau dijual.</li>
+          <li><strong>Tidak dijual ke siapa pun:</strong> kami tidak menjual, menyewakan, atau membagikan data pribadi ke pihak ketiga untuk pemasaran.</li>
+          <li><strong>Tidak ada akses ke rekening bank / e-wallet:</strong> Axten tidak terhubung ke bank, e-wallet, atau exchange-mu. Semua pencatatan dilakukan manual olehmu.</li>
+          <li><strong>Tidak ada private key:</strong> Axten tidak pernah meminta, menyimpan, atau memproses private key / seed phrase dompet crypto-mu.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="policy" id="id-4">
+      <div class="sec-head"><div class="sec-no">4</div><h2>Layanan pihak ketiga</h2></div>
+      <div class="body">
+        <p>Beberapa fitur membutuhkan koneksi internet ke layanan di luar Axten. Saat itu, layanan tersebut dapat melihat informasi teknis standar seperti alamat IP dan waktu permintaan — sesuai kebijakan privasi mereka masing-masing.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Layanan</th><th>Digunakan untuk</th><th>Data yang terlibat</th></tr></thead>
+            <tbody>
+              <tr><td><strong>CoinGecko</strong></td><td>Harga crypto terkini (top 250) dan perhitungan untung / rugi portofolio</td><td>Permintaan harga koin publik. Jumlah koin milikmu <strong>tidak dikirim</strong> — perhitungan dilakukan di perangkatmu.</td></tr>
+              <tr><td><strong>Penyedia kurs mata uang</strong></td><td>Konverter mata uang untuk Rupiah + 29 mata uang</td><td>Permintaan pasangan mata uang yang sedang kamu konversi, beserta data teknis standar (mis. alamat IP, waktu permintaan). Isi transaksi dan saldomu <strong>tidak dikirim</strong>.</td></tr>
+              <tr><td><strong>Telegram</strong></td><td>Membuka Axten sebagai Mini App melalui @Axten_Bot</td><td>Telegram memproses data sesuai Kebijakan Privasi Telegram. Axten tidak membaca isi chat-mu.</td></tr>
+              <tr><td><strong>Penyedia hosting</strong></td><td>Menyajikan file aplikasi web agar bisa dibuka di browser</td><td>Log akses teknis standar (mis. alamat IP, jenis browser) oleh penyedia hosting.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">Jika kamu membuka tautan keluar dari Axten (mis. ke X / Twitter @axtenfinance atau kanal Telegram Axten Finance), privasimu di sana diatur oleh kebijakan platform tersebut.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-5">
+      <div class="sec-head"><div class="sec-no">5</div><h2>Foto struk &amp; lampiran</h2></div>
+      <div class="body">
+        <p>Foto struk yang kamu lampirkan pada transaksi disimpan bersama data transaksi di perangkatmu dan <strong>tidak diunggah</strong> ke server mana pun oleh Axten.</p>
+        <p>Perlu diingat: jika kamu mengekspor data atau membagikan tangkapan layar yang memuat foto tersebut, file hasil ekspor itu berada di luar kendali Axten — simpanlah di tempat yang aman.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-6">
+      <div class="sec-head"><div class="sec-no">6</div><h2>PIN &amp; keamanan</h2></div>
+      <div class="body">
+        <ul>
+          <li>PIN berfungsi sebagai kunci layar aplikasi di perangkatmu. PIN bukan enkripsi rekening bank dan tidak melindungi data dari orang yang sudah memegang perangkatmu dalam keadaan terbuka.</li>
+          <li>Jaga kerahasiaan PIN dan kunci layar perangkatmu (sidik jari / Face ID / pola HP).</li>
+          <li>Gunakan Axten di perangkat dan browser milikmu sendiri. Hindari mencatat data keuangan di perangkat bersama atau komputer publik.</li>
+          <li>Menghapus data situs / riwayat browser, mengganti browser, atau membuka mode penyamaran dapat menghapus data Axten secara permanen.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="policy" id="id-7">
+      <div class="sec-head"><div class="sec-no">7</div><h2>Ekspor, backup &amp; penghapusan data</h2></div>
+      <div class="body">
+        <p><strong>Ekspor &amp; backup.</strong> Kamu dapat mengekspor datamu ke format Excel, JSON, atau CSV dari menu Laporan. File ekspor adalah salinan lengkap datamu — perlakukan seperti dokumen keuangan pribadi dan simpan di tempat aman.</p>
+        <p><strong>Penghapusan.</strong> Karena data hanya ada di perangkatmu, kamu dapat menghapusnya secara permanen dengan menghapus data aplikasi di dalam Axten (jika tersedia) atau dengan membersihkan data situs / penyimpanan browser untuk situs Axten. Setelah terhapus dari perangkat, kami tidak memiliki salinannya dan tidak dapat memulihkannya.</p>
+        <p><strong>Mode demo.</strong> Data yang dibuat dalam mode demo bersifat contoh untuk mencoba aplikasi dan tetap tersimpan hanya di perangkatmu.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-8">
+      <div class="sec-head"><div class="sec-no">8</div><h2>Anak-anak</h2></div>
+      <div class="body">
+        <p>Axten adalah aplikasi pencatat keuangan untuk pengguna umum dan tidak ditujukan khusus untuk anak di bawah usia yang disyaratkan hukum setempat untuk mengelola keuangan sendiri. Orang tua / wali yang mengizinkan anaknya menggunakan Axten bertanggung jawab atas penggunaannya.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-9">
+      <div class="sec-head"><div class="sec-no">9</div><h2>Perubahan kebijakan ini</h2></div>
+      <div class="body">
+        <p>Jika cara Axten memperlakukan data berubah — misalnya jika suatu saat ada fitur sinkronisasi atau akun — kebijakan ini akan diperbarui terlebih dahulu, dengan tanggal berlaku dan nomor versi baru di bagian atas halaman ini. Perubahan penting akan diumumkan melalui kanal resmi Axten.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="id-10">
+      <div class="sec-head"><div class="sec-no">10</div><h2>Hubungi kami</h2></div>
+      <div class="body">
+        <p>Ada pertanyaan soal privasi atau ingin melaporkan masalah? Hubungi kami melalui kanal resmi berikut:</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span>Telegram Bot</span>
+            <a href="https://t.me/Axten_Bot" target="_blank" rel="noopener">@Axten_Bot</a>
+            <p>Bot resmi Axten Finance di Telegram.</p>
+          </div>
+          <div class="contact-card">
+            <span>X (Twitter)</span>
+            <a href="https://x.com/axtenfinance" target="_blank" rel="noopener">@axtenfinance</a>
+            <p>Pengumuman dan pembaruan Axten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot-brand">AXTEN — Axten Finance</div>
+      <p>Kembangkan kekayaanmu. Kebijakan Privasi versi 1.0 — berlaku sejak 18 November 2026.<br />Aplikasi: <a href="https://axten-xenon231techs-projects.vercel.app/" target="_blank" rel="noopener">axten-xenon231techs-projects.vercel.app</a></p>
+    </footer>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div id="content-en" lang="en" class="hidden">
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">1</div>
+        <h3>Your data stays on your device</h3>
+        <p>Transactions, wallets, assets, and budgets are stored in your browser's local storage (localStorage) on your own phone or computer.</p>
+      </div>
+      <div class="principle">
+        <div class="num">2</div>
+        <h3>No account, no server</h3>
+        <p>Axten requires no sign-up and has no server that receives or stores your financial data.</p>
+      </div>
+      <div class="principle">
+        <div class="num">3</div>
+        <h3>You are in control</h3>
+        <p>You can export all of your data at any time, and permanently delete it directly from your device.</p>
+      </div>
+    </div>
+
+    <div class="callout" role="note">
+      <strong>⚠ Important: PIN &amp; backups</strong>
+      <p>Because your data exists only on your device, <strong>forgetting your PIN means your data cannot be recovered</strong> and must be erased. Export a backup (JSON / Excel / CSV) regularly from the Reports menu so your data is safe if your phone is lost, your browser is cleared, or your PIN is forgotten.</p>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#en-1">About this policy</a></li>
+        <li><a href="#en-2">Data stored on your device</a></li>
+        <li><a href="#en-3">Data we do not collect</a></li>
+        <li><a href="#en-4">Third-party services</a></li>
+        <li><a href="#en-5">Receipt photos &amp; attachments</a></li>
+        <li><a href="#en-6">PIN &amp; security</a></li>
+        <li><a href="#en-7">Export, backup &amp; deletion</a></li>
+        <li><a href="#en-8">Children</a></li>
+        <li><a href="#en-9">Changes to this policy</a></li>
+        <li><a href="#en-10">Contact us</a></li>
+      </ol>
+    </nav>
+
+    <section class="policy" id="en-1">
+      <div class="sec-head"><div class="sec-no">1</div><h2>About this policy</h2></div>
+      <div class="body">
+        <p>This Privacy Policy applies to <strong>Axten Finance (“Axten”)</strong> — a personal finance tracker available as a web app and as a Telegram Mini App (@Axten_Bot).</p>
+        <p>Axten is built <strong>local-first</strong>: the app runs entirely on your device. By using Axten, you agree to the practices described on this page.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-2">
+      <div class="sec-head"><div class="sec-no">2</div><h2>Data stored on your device</h2></div>
+      <div class="body">
+        <p>The following data is created by you inside the app and stored <strong>only</strong> in your device's local storage:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Data type</th><th>Examples</th><th>Sent to an Axten server?</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Transactions</strong></td><td>Income, expenses, amounts, categories, notes, dates</td><td><span class="no">No</span></td></tr>
+              <tr><td><strong>Wallets &amp; assets</strong></td><td>Wallet names, balances, asset list, total net worth</td><td><span class="no">No</span></td></tr>
+              <tr><td><strong>Budgets &amp; bills</strong></td><td>Budgets per category, recurring bills and due dates</td><td><span class="no">No</span></td></tr>
+              <tr><td><strong>Crypto portfolio</strong></td><td>Coins you record and how much you hold</td><td><span class="no">No</span></td></tr>
+              <tr><td><strong>Receipt photos</strong></td><td>Photos of receipts you attach to transactions</td><td><span class="no">No</span></td></tr>
+              <tr><td><strong>Settings</strong></td><td>Language, currency, theme, onboarding tour status, demo mode</td><td><span class="no">No</span></td></tr>
+              <tr><td><strong>App PIN</strong></td><td>The PIN you create to lock the app (stored in protected form on the device)</td><td><span class="no">No</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">There is no cross-device sync, so data on your phone and on your computer will differ — each reflects what you recorded on that device.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-3">
+      <div class="sec-head"><div class="sec-no">3</div><h2>Data we do not collect</h2></div>
+      <div class="body">
+        <ul>
+          <li><strong>No account:</strong> we do not collect your name, email, phone number, or a password to register for Axten.</li>
+          <li><strong>No financial tracking:</strong> the contents of your transactions and balances are never sent, analysed, or sold.</li>
+          <li><strong>Never sold:</strong> we do not sell, rent, or share personal data with third parties for marketing.</li>
+          <li><strong>No bank / e-wallet access:</strong> Axten does not connect to your bank, e-wallet, or exchange. All entries are made manually by you.</li>
+          <li><strong>No private keys:</strong> Axten never asks for, stores, or processes your crypto wallet's private key or seed phrase.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="policy" id="en-4">
+      <div class="sec-head"><div class="sec-no">4</div><h2>Third-party services</h2></div>
+      <div class="body">
+        <p>Some features need an internet connection to services outside Axten. When that happens, those services may see standard technical information such as your IP address and the time of the request — under their own privacy policies.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Service</th><th>Used for</th><th>Data involved</th></tr></thead>
+            <tbody>
+              <tr><td><strong>CoinGecko</strong></td><td>Live crypto prices (top 250) and portfolio profit / loss calculations</td><td>Requests for public coin prices. How much you hold is <strong>not sent</strong> — calculations happen on your device.</td></tr>
+              <tr><td><strong>Exchange-rate provider</strong></td><td>Currency converter for Indonesian Rupiah + 29 currencies</td><td>A request for the currency pair you are converting, plus standard technical data (e.g. IP address, time of request). Your transactions and balances are <strong>not sent</strong>.</td></tr>
+              <tr><td><strong>Telegram</strong></td><td>Opening Axten as a Mini App via @Axten_Bot</td><td>Telegram processes data under Telegram's Privacy Policy. Axten does not read your chats.</td></tr>
+              <tr><td><strong>Hosting provider</strong></td><td>Serving the web app files to your browser</td><td>Standard technical access logs (e.g. IP address, browser type) held by the hosting provider.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">If you follow an outbound link from Axten (e.g. to X / Twitter @axtenfinance or the Axten Finance Telegram channel), your privacy there is governed by that platform's policy.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-5">
+      <div class="sec-head"><div class="sec-no">5</div><h2>Receipt photos &amp; attachments</h2></div>
+      <div class="body">
+        <p>Receipt photos you attach to a transaction are stored together with that transaction on your device and are <strong>not uploaded</strong> to any server by Axten.</p>
+        <p>Please note: if you export your data or share a screenshot containing such a photo, that exported file is outside Axten's control — keep it somewhere safe.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-6">
+      <div class="sec-head"><div class="sec-no">6</div><h2>PIN &amp; security</h2></div>
+      <div class="body">
+        <ul>
+          <li>The PIN acts as an app lock screen on your device. It is not bank-grade encryption and does not protect data from someone already holding your unlocked device.</li>
+          <li>Keep your PIN and your device lock (fingerprint / Face ID / phone pattern) private.</li>
+          <li>Use Axten on your own device and browser. Avoid recording financial data on shared devices or public computers.</li>
+          <li>Clearing site data / browser history, switching browsers, or using private browsing mode may permanently delete your Axten data.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="policy" id="en-7">
+      <div class="sec-head"><div class="sec-no">7</div><h2>Export, backup &amp; deletion</h2></div>
+      <div class="body">
+        <p><strong>Export &amp; backup.</strong> You can export your data to Excel, JSON, or CSV from the Reports menu. An export file is a complete copy of your data — treat it like a private financial document and store it safely.</p>
+        <p><strong>Deletion.</strong> Because your data exists only on your device, you can permanently delete it by deleting the app data inside Axten (where available) or by clearing the site data / browser storage for the Axten site. Once deleted from your device, we hold no copy and cannot restore it.</p>
+        <p><strong>Demo mode.</strong> Data created in demo mode is sample data for trying the app, and likewise stays only on your device.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-8">
+      <div class="sec-head"><div class="sec-no">8</div><h2>Children</h2></div>
+      <div class="body">
+        <p>Axten is a finance tracker for general users and is not specifically directed at children below the age required by local law to manage their own finances. Parents / guardians who allow a child to use Axten are responsible for that use.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-9">
+      <div class="sec-head"><div class="sec-no">9</div><h2>Changes to this policy</h2></div>
+      <div class="body">
+        <p>If how Axten handles data ever changes — for example, if a sync or account feature is added in the future — this policy will be updated first, with a new effective date and version number at the top of this page. Material changes will be announced through Axten's official channels.</p>
+      </div>
+    </section>
+
+    <section class="policy" id="en-10">
+      <div class="sec-head"><div class="sec-no">10</div><h2>Contact us</h2></div>
+      <div class="body">
+        <p>Questions about privacy, or want to report an issue? Reach us through the official channels below:</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <span>Telegram Bot</span>
+            <a href="https://t.me/Axten_Bot" target="_blank" rel="noopener">@Axten_Bot</a>
+            <p>Axten Finance's official bot on Telegram.</p>
+          </div>
+          <div class="contact-card">
+            <span>X (Twitter)</span>
+            <a href="https://x.com/axtenfinance" target="_blank" rel="noopener">@axtenfinance</a>
+            <p>Axten announcements and updates.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot-brand">AXTEN — Axten Finance</div>
+      <p>Grow your wealth. Privacy Policy version 1.0 — effective 18 November 2026.<br />App: <a href="https://axten-xenon231techs-projects.vercel.app/" target="_blank" rel="noopener">axten-xenon231techs-projects.vercel.app</a></p>
+    </footer>
+  </div>
+
+</div>
+
+<script>
+  var currentLang = 'id';
+  var strings = {
+    id: {
+      hero: 'Bagaimana Axten memperlakukan data keuanganmu — singkatnya: data itu disimpan di perangkatmu, bukan di server kami.',
+      label: 'Bahasa',
+      print: 'Halaman ini bisa dicetak / disimpan sebagai PDF dari browser.',
+      title: 'Axten — Kebijakan Privasi',
+      brandTag: 'Axten Finance — Kembangkan kekayaanmu',
+      linkApp: 'Buka Aplikasi',
+      linkBot: 'Bot Telegram',
+      heroTitle: 'Kebijakan <em>Privasi</em>',
+      pillEffective: 'Berlaku sejak',
+      pillVersion: 'Versi',
+      pillScope: 'Untuk aplikasi web & Telegram Mini App'
+    },
+    en: {
+      hero: 'How Axten treats your financial data — in short: it is stored on your device, not on our servers.',
+      label: 'Language',
+      print: 'You can print / save this page as a PDF from your browser.',
+      title: 'Axten — Privacy Policy',
+      brandTag: 'Axten Finance — Grow your wealth',
+      linkApp: 'Open App',
+      linkBot: 'Telegram Bot',
+      heroTitle: 'Privacy <em>Policy</em>',
+      pillEffective: 'Effective since',
+      pillVersion: 'Version',
+      pillScope: 'For the web app & Telegram Mini App'
+    }
+  };
+  function setLang(lang){
+    currentLang = lang;
+    document.getElementById('content-id').classList.toggle('hidden', lang !== 'id');
+    document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+    document.getElementById('btn-id').setAttribute('aria-pressed', lang === 'id' ? 'true' : 'false');
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+    document.getElementById('hero-desc').textContent = strings[lang].hero;
+    document.getElementById('lang-label').textContent = strings[lang].label;
+    document.getElementById('print-note').textContent = strings[lang].print;
+    document.getElementById('brand-tag').textContent = strings[lang].brandTag;
+    document.getElementById('link-app').textContent = strings[lang].linkApp;
+    document.getElementById('link-bot').textContent = strings[lang].linkBot;
+    document.getElementById('hero-title').innerHTML = strings[lang].heroTitle;
+    document.getElementById('pill-effective').textContent = strings[lang].pillEffective;
+    document.getElementById('pill-version').textContent = strings[lang].pillVersion;
+    document.getElementById('pill-scope').textContent = strings[lang].pillScope;
+    document.title = strings[lang].title;
+    document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+  }
+  // If the visitor's browser is set to English first, start in English.
+  try {
+    var nav = (navigator.language || '').toLowerCase();
+    if (nav.indexOf('en') === 0) setLang('en');
+  } catch(e){}
+</script>
+</body>
+</html>
